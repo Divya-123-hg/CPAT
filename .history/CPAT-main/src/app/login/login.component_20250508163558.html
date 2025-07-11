@@ -1,0 +1,19 @@
+
+<div class="header-banner" *ngFor="let component of components;">
+    <h1>{{component.username}}</h1>
+    <h5>{{component.role}}</h5>
+</div>
+
+<div class="modal" *ngIf="showLogin">
+    <div class="box">
+        <h3>Login</h3>
+        <label>UserName</label>
+        <input type="text" [(ngModel)]="newComponent.username" /><br>
+        <label>Password</label>
+        <input type="password" [(ngModel)]="newComponent.password" /><br>
+        <button (click)="checkLogin(newComponent.username)">Login</button>
+        <button (click)="closeLogin()">Cancel</button>       
+    </div>
+</div>
+
+<div class="overlay" *ngIf="showLogin" (click)="closeLogin()"></div>

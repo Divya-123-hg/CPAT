@@ -1,0 +1,28 @@
+<mat-card>
+    <h2>Edit Component</h2>
+
+    <form (ngSubmit)="onSubmit()" #uploadForm="ngForm" novalidate *ngFor="let c of component">
+        <mat-form-field class="full-width">
+            <mat-label>Component name</mat-label>
+            <input matInput name="name" [(ngModel)]="newComponent.name" #name="ngModel">
+            <mat-error class="error" *ngIf="name.invalid && name.touched">Component name is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Description</mat-label>
+            <input matInput name="description" [(ngModel)]="newComponent.description" required
+                #description="ngModel">
+            <mat-error class="error" *ngIf="description.invalid && description.touched">Description is
+                required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>GIT URL</mat-label>
+            <input matInput name="url" type="url" [(ngModel)]="newComponent.url" required #url="ngModel">
+            <mat-error class="error" *ngIf="url.invalid && url.touched">Git-url is required</mat-error>
+        </mat-form-field>
+
+        <button mat-stroked-button color="primary" type="submit" title="Submit the C">Submit</button>
+        <button mat-stroked-button color="warn" type="button" (click)="goBack()">Cancel</button>
+    </form>
+</mat-card>

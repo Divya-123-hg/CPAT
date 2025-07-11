@@ -1,0 +1,127 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Contributor Dashboard</title>
+        <style>
+            body{
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: #e0f2f1;
+            }
+            .container{
+                display: flex;
+            }
+            .sidebar{
+                width: 250px;
+                background-color: #00695c;
+                color: white;
+                padding: 20px;
+                height: 100vh;
+            }
+            .sidebar h2{
+                margin-top: 0;
+            }
+            .main-content{
+                flex-grow: 1;
+                padding: 20px;
+            }
+            .filters{
+                display: flex;
+                gap:10px;
+                margin-bottom: 20px;
+            }
+            .filters input, .filters select, .filters button{
+                padding: 10px;
+                font-size: 16px;
+            }
+            table{
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 0;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+                background-color: white;
+            }
+            th{
+                background-color: #004d40;
+                color: white;
+                padding: 14px;
+                text-align: left;
+            }
+            td{
+                padding: 14px;
+                color: #333;
+            }
+            tbody tr:nth-child(even){
+                background-color: #f5f5f5;
+            }
+            tbody tr:hover{
+                background-color: #e0f2f1;
+                transition: background-color 0.3s ease;
+            }
+            .view-btn{
+                background-color: #00796b;
+                color: white;
+                padding: 8px 14px;
+                text-decoration: none;
+                border-radius: 6px;
+                border: none;
+                font-weight: bold;
+                transition: background-color 0.3s ease;
+            }
+            .view-btn:hover{
+                background-color: #004d40;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="main-content">
+                <h1>Contributor Dashboard</h1>
+                <div class="filters">
+                    <div class="filter-group">
+                        <label for="search"></label>
+                        <input id="search" type="text" placeholder="Search components by name or status..."/>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="category"></label>
+                        <select id="category" [(ngModel)]="selectedCategory">
+                            <option value="">All Categories</option>
+                            <option value="approved">Approved</option>
+                            <option value="rejected">Rejected</option>
+                            <option value="reviewed">Reviewed</option>
+                            <option value="pending_review">Pending for Reviewal</option>
+                            <option value="pending_approve">Pending for Approval</option>
+                        </select>
+                    </div>
+                    <button class="filter-btn">Apply Filter</button>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Component id</th>
+                            <th>Metadata</th>
+                            <th>Fron</th>
+                            <th>To</th>
+                            <th>Comment</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Button</td>
+                            <td>Reviewed</td>
+                            <td>Approved</td>
+                            <td><a htef="http://example.com/component1" class="view-btn" target="_blank">View</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html> -->

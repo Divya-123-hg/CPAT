@@ -1,0 +1,14 @@
+<button onclick="openLogin()">Login</button>
+
+<div class="overlay" *nglf="showLogin" onclick="closeLogin()"></div>
+
+
+<div class="modal" *nglf="showLogin">
+    <h3>Login</h3>
+    <label>UserName</label>
+    <input type="text" id="username" /><br>
+    <label>Password</label>
+    <input type="password" id="password" /><br>
+    <button onclick="checkLogin()">Login</button>
+    <button onclick="closeLogin()">Cancel</button>
+</div>

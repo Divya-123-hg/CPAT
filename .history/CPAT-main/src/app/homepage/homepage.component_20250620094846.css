@@ -1,0 +1,89 @@
+.homepage-container {
+    background-image: url('https://images7.alphacoders.com/909/thumb-1920-909408.jpg');
+    background-color: #121212;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* position:fixed; */
+    color: #fff;
+    text-align: center;
+    /* padding: 50px 20px; */
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.header h1 {
+    color: #000;
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+
+.header h3 {
+    color: black;
+    font-weight: 400;
+}
+
+logo-icon {
+    font-size: 3rem;
+    color: #0ff;
+}
+
+.button-container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.role-btn {
+    background-color: #1f1f1f;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.role-btn {
+    margin-right: 8px;
+}
+
+.role-btn:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+.box {
+    position: fixed;
+    top: 10%;
+    right: 20px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    display: block;
+    /* background: rgba(0, 0, 0, 0.3); */
+    /* text-align:right; */
+}
+
+.box1 {
+    position: absolute;
+    top: 100%;
+    right: 25px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.5);
+    display: block;
+    text-align: right;
+}
+
+.x {
+    color: #fff;
+    border: none;
+    background: transparent;
+}
+
+.Login {
+    margin: 10px;
+}

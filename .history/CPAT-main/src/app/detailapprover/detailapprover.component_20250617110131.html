@@ -1,0 +1,28 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- It links to a CSS stylesheet hosted on CDNJS (a content delivery network) -->
+</head>
+
+<div *ngFor="let component of component" class="container">
+    <button routerLink="/reviewer/{{component.reviewed_by}}"><i class="fas fa-long-arrow-alt-left"></i></button>
+    <h2>Component Details!!</h2>
+    <p><strong>Id:</strong>{{ component.id }}</p>
+    <p><strong>Name:</strong>{{ component.name }}</p>
+    <p><strong>Description:</strong>{{ component.description }}</p>
+    <p><strong>Status:</strong>{{ (component.approver_status) }}</p>
+    <a [href]="component.url" target="_blank"><button>View on github</button></a>
+    <button (click)="update(component.id,'approved')">Approve</button>
+    <button (click)="openPopup()">Reject</button>
+
+
+    <div class="overlay" *ngIf="isOpen">
+        <div class="popup">
+            <h2>Leave a comment</h2>
+            <textarea [(ngModel)]="comment" placeholder="Write your comment here..."></textarea>
+            <div class="buttons">
+                <button (click)="submitComment(comment,component.id); update(component.id,'rejected')">Submit</button>
+                <button class="cancel" (click)="closePopup()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

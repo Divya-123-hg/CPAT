@@ -1,0 +1,40 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- It links to a CSS stylesheet hosted on CDNJS (a content delivery network) -->
+</head>
+
+<div class="contents">
+<div class="container">
+    <div *ngFor="let component of component">
+        <button routerLink="/reviewer/{{component.reviewed_by}}" title="Go Back"><i class="fas fa-long-arrow-alt-left"></i></button>
+        <h2> Component Details</h2>
+        <!-- <h1>{{ component.reviewed_by }}</h1> -->
+        <p><strong>Id:</strong>{{ component.id }}</p>
+        <p><strong>Name:</strong>{{ component.name }}</p>
+        <p><strong>Description:</strong>{{toSentenceCase(component.description) }}</p>
+        <p><strong>Status:</strong>{{toSentenceCase(component.status) }}</p>
+        <!-- <ol style="list-style-type: none;">
+            <li> -->
+                <a [href]="component.url" target="_blank">
+                    <button title="View on GitHub">View on GitHub</button>
+                </a>
+            <!-- </li>
+        </ol> -->
+        
+        <button (click)="update(component.id,'reviewed')"  [disabled]="component.status==='reviewed' || component.status==='approved'|| component.status==='rejected'" title="Review" >Review</button>
+
+        <button (click)="openPopup()" [disabled]="component.status==='reviewed' || component.status==='approved'|| component.status==='rejected'" title="Return">Return</button>
+
+        <div class="overlay" *ngIf="isOpen">
+            <div class="popup">
+                <h2>Leave a comment</h2>
+                <textarea [(ngModel)]="comment" placeholder="Write your comment here..." class="text"></textarea>
+                <div class="buttons">
+                    <button class= (click)="submitComment(comment,component.id); update(component.id,'returned')">Submit</button>
+                    <button class="cancel" (click)="closePopup()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

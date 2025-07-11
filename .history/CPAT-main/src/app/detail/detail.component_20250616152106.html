@@ -1,0 +1,40 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- It links to a CSS stylesheet hosted on CDNJS (a content delivery network) -->
+</head>
+
+
+
+<div class="container">
+    <div *ngFor="let component of component">
+        <button routerLink="/reviewer/{{component.reviewed_by}}"><i class="fas-fas-arrow-left"></i></button>
+        <h2>Component Details!!</h2>
+        <h1>{{ component.reviewed_by }}</h1>
+        <p><strong>Id:</strong>{{ component.id }}</p>
+        <p><strong>Name:</strong>{{ component.name }}</p>
+        <p><strong>Description:</strong>{{ component.description }}</p>
+        <p><strong>Status:</strong>{{ component.reviewer_status }}</p>
+        <ol style="list-style-type: none;">
+            <li>
+                <a [href]="component.url" target="_blank">
+                    <button class="btn">View on github</button>
+                </a>
+            </li>
+        </ol>
+        <button class="btn-res" (click)="update(component.id,'reviewed')"  [disabled]="component.status==='reviewed' || component.status==='approved'|| component.status==='rejected'" >Review</button>
+
+        <button class="btn-res" (click)="openPopup()" [disabled]="component.status==='reviewed' || component.status==='approved'|| component.status==='rejected'">Return</button>
+
+        <div class="overlay" *ngIf="isOpen">
+            <div class="popup">
+                <h2>Leave a comment</h2>
+                <textarea [(ngModel)]="comment" placeholder="Write your comment here..."></textarea>
+                <div class="buttons">
+                    <button
+                        (click)="submitComment(comment,component.id); update(component.id,'returned')">Submit</button>
+                    <button class="cancel" (click)="closePopup()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

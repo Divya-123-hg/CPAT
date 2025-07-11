@@ -1,0 +1,84 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+
+<div class="main-content">
+
+    <div class="header-banner">
+        <div class="logo-banner"></div>
+        <button routerLink="/homepage" class="btn" title="Homepage"><i class="fas fa-home"></i> Home</button>
+        <button (click)="notifications()" class="btn" title="Notifications"><i class="fas fa-bell"></i>
+            Notifications</button>
+
+        <div *ngIf="open" class="block">
+            <div *ngFor="let component of components3;" class="notification-card">
+                <i class="fas fa-bell"></i>
+                <div>
+                    <strong><a [attr.href]="'/timeline/' + component.id">{{ component.notification }}</a></strong>
+                </div>
+                <button class="wrong" (click)="removeNotification(component.id)"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="align">
+            <div class="name" *ngFor="let component of component1;">
+                <h3 title="Approver"><i class="fas fa-user"></i> Hello {{component.username}},</h3>
+            </div>
+            <div class="log">
+                <button title="Logout" routerLink="/homepage" class="logout" title="Homepage"><i
+                        class="fas fa-sign-out-alt"></i> Logout</button>
+            </div>
+        </div>
+        <div class="filters">
+            <input type="text" [(ngModel)]="searchText" placeholder="Search by name..." (change)="search(searchText)"
+                title="Search by Name">
+            <select id="myselect" [(ngModel)]="selectedCategory" (change)="fetch(selectedCategory)"
+                title="Filter by Status">
+                <option value="" hidden>All Categories</option>
+                <option value="all">All Categories</option>
+                <option value="approved">Approved</option>
+                <option value="rejected">Rejected</option>
+                <option value="reviewed">Reviewed</option>
+            </select>
+        </div>
+
+        <table *ngIf="components.length>0" class="styled-table">
+            <thead>
+                <tr>
+                    <th>Component Id</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Current Status</th>
+                    <th>View</th>
+                    <th>Created By</th>
+                    <th>Reviewed By</th>
+                    <!-- <th>Approved By</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let component of components | paginate: { itemsPerPage: 5, currentPage: page }">
+                    <!-- <td>{{i+1}}</td> -->
+                    <td>{{ component.id}}</td>
+                    <td>{{ component.name}}</td>
+                    <td>{{component.description}}</td>
+                    <td>{{ toSentenceCase(component.status) }}</td>
+                    <td>
+                        <!-- <a [href]="component.url" target="_blank" class="view-btn">View</a> -->
+                        <div class="button-container">
+                            <button (click)="onView(component.id)" class="btn" title="Approve or Reject">View</button>
+                        </div>
+                    </td>
+                    <td>{{ component.created_by }}</td>
+                    <td>{{ component.reviewed_by }}</td>
+                    <!-- <td>{{ component.approved_by }}</td> -->
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="components.length != 0" class="paginate"><pagination-controls
+                (pageChange)="page = $event"></pagination-controls></div>
+
+        <p *ngIf="components.length === 0">No components available.</p>
+    </div>
+</div>

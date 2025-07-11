@@ -1,0 +1,23 @@
+<div *ngFor="let component of component" class="container">
+    <button class="btn-res" (click)="goBack()">Back</button>
+    <h2>Component Details!!</h2>
+    <p><strong>Id:</strong>{{ component.id }}</p>
+    <p><strong>Name:</strong>{{ component.name }}</p>
+    <p><strong>Description:</strong>{{ component.description }}</p>
+    <p><strong>Status:</strong>{{ component.approver_status }}</p>
+    <a [href]="component.url" target="_blank"><button class="btn">View on github</button></a>
+    <button class="btn" (click)="update(component.id,'approved')">Approve</button>
+    <button class="btn" (click)="openPopup()">Reject</button>
+
+
+    <div class="overlay" *ngIf="isOpen">
+        <div class="popup">
+            <h2>Leave a comment</h2>
+            <textarea [(ngModel)]="comment" placeholder="Write your comment here..."></textarea>
+            <div class="buttons">
+                <button (click)="submitComment(comment,component.id); update(component.id,'rejected')">Submit</button>
+                <button class="cancel" (click)="closePopup()">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>

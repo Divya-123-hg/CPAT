@@ -1,0 +1,14 @@
+
+<!-- <div class="overlay" *ngIf="isOpen" (click)="closePopup()"> -->
+<div class="overlay" *ngIf="isOpen">
+    <!-- <div class="popup" (click)="$event.stopPropagation"> -->
+        
+    <div class="popup" (click)="$event.stopPropagation">
+        <h2>Leave a comment</h2>
+        <textarea [(ngModel)]="comment" placeholder="Write your comment here..."></textarea>
+        <div class="buttons">
+            <button (click)="submitComment()">Submit</button>
+            <button class="cancel" (click)="closePopup()">Cancel</button>
+        </div>
+    </div>
+</div>

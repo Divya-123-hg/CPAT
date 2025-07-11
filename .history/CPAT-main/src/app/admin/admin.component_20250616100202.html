@@ -1,0 +1,58 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">        <!-- It links to a CSS stylesheet hosted on CDNJS (a content delivery network) -->
+</head>
+
+
+<div class="adminPage" *ngIf="AdminPage">
+    <div class="header-banner">
+        <div class="Homebtn">
+            <button routerLink="/homepage" class="btn"><i class="fas fa-home"></i>Home</button>
+            <button class="btn" (click)="addUser()"><i class="fas fa-user-plus"></i> Add User</button>
+        </div>
+        <h2>ADMIN</h2>
+    </div>
+
+    <div class="modal">
+        <div class="box1" *ngIf="showLogin">
+            <h3>ADD USER</h3>
+            <div class="form-group">
+                <label>UserName</label>
+                <input [(ngModel)]="component.username" type="text" /><br>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input [(ngModel)]="component.password" type="text" /><br>
+            </div>
+            <div class="form-group">
+                <label>Role</label>
+                <select id="role" [(ngModel)]="component.role">
+                    <option value="">Select Role</option>
+                    <option value="contributor">Contributor</option>
+                    <option value="reviewer">Reviewer</option>
+                    <option value="approver">Approver</option>
+                </select><br>
+            </div>
+            <button class="button" (click)="onSubmit()">Add</button>
+            <button class="button" (click)="onback()">Cancel</button>
+        </div>
+    </div>
+    <div>
+        <div  *ngIf ="component1.length>0" >no users added</div>
+        <table class="styled-table" *ngIf="component1.length>0">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let component of component1;">
+                    <td>{{component.id}}</td>
+                    <td>{{component.username}}</td>
+                    <td>{{component.role}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

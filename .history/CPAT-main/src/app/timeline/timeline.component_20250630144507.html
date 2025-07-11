@@ -1,0 +1,81 @@
+<div class="timeline-container" *ngFor="let component of component">
+
+    <h2 title="Component name and id">{{component.id}} : {{component.name}}</h2>
+
+    <div class="tieline">
+        <div class="timeline-item created">
+            <div class="timeline-content" title="Contributor Details">
+                <!-- <h3>Created</h3> -->
+                <p><strong> Created by: </strong>{{component.created_by}}</p>
+                <p><strong>Time: </strong>{{component.created_at | date:'dd-MM-YY'}},{{component.created_at |
+                    date:'hh:mm'}}</p>
+                <p><strong>Current status: </strong>{{toSentenceCase(component.status)}}</p>
+            </div>
+        </div>
+
+        <div class="timeline-item reviewed">
+            <div class="timeline-content" title="Reviewer Details">
+                <!-- <h3>Reviewed</h3> -->
+                <p><strong>Reviewed by:</strong>{{component.reviewed_by}}</p>
+                <p><strong>Reviewed on: </strong>{{component.reviewed_at | date:'dd-MM-YY'}}</p>
+                <p><strong>Comment: </strong>{{toSentenceCase(component.reviewer_description)}}</p>
+                <p><strong>Reviewer Status: </strong>{{toSentenceCase(component.reviewer_status)}}</p>
+            </div>
+        </div>
+
+        <div class="timeline-item approved">
+            <div class="timeline-content" title="Approver Details">
+                <!-- <h3>Approved</h3> -->
+                <p><strong>Approved by: </strong>{{component.approved_by}}</p>
+                <p><strong>Approved on: </strong>{{component.approved_at | date:'dd-MM-YY'}}</p>
+                <p><strong>Comment: </strong>{{toSentenceCase(component.approver_feedback)}}</p>
+                <p><strong>Approver Status: </strong>{{toSentenceCase(component.approver_status)}}</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="button-container">
+        <!-- <button routerLink="/contributor/{{component.name}}" class="btn">Back</button> -->
+        <button (click)="goBack(component.created_by)" class="btn" title="Go Back">Back</button>
+    </div>
+
+</div>
+
+<div class="timeline-container" *ngFor="let i of component1">
+    <h2 title="Component name and id">{{i.compid}} : {{i.name}}</h2>
+
+    <div class="tieline">
+        <div class="timeline-item created">
+            <div class="timeline-content" title="Contributor Details">
+                <!-- <h3>Created</h3> -->
+                <p><strong> Created by: </strong>{{i.created_by}}</p>
+                <p><strong>Time: </strong>{{i.created_at | date:'dd-MM-YY'}},{{i.created_at |
+                    date:'hh:mm'}}</p>
+                <p><strong>Current status: </strong>{{toSentenceCase(i.status)}}</p>
+            </div>
+        </div>
+
+        <div class="timeline-item reviewed">
+            <div class="timeline-content" title="Reviewer Details">
+                <!-- <h3>Reviewed</h3> -->
+                <p><strong>Reviewed by:</strong>{{i.reviewed_by}}</p>
+                <p><strong>Reviewed on: </strong>{{i.reviewed_at | date:'dd-MM-YY'}}</p>
+                <p><strong>Comment: </strong>{{toSentenceCase(i.reviewer_feedback)}}</p>
+                <!-- <p><strong>Reviewer Status: </strong>{{toSentenceCase(i.reviewer_status)}}</p> -->
+            </div>
+        </div>
+
+        <div class="timeline-item approved">
+            <div class="timeline-content" title="Approver Details">
+                <!-- <h3>Approved</h3> -->
+                <p><strong>Approved by: </strong>{{i.approved_by}}</p>
+                <p><strong>Approved on: </strong>{{i.approved_at | date:'dd-MM-YY'}}</p>
+                <p><strong>Comment: </strong>{{toSentenceCase(i.approver_feedback)}}</p>
+                <!-- <p><strong>Approver Status: </strong>{{toSentenceCase(i.approver_status)}}</p> -->
+            </div>
+        </div>
+
+    </div>
+    
+</div>

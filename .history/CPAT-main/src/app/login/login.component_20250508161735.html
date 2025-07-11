@@ -1,0 +1,32 @@
+<!-- 
+<p>Test</p>
+<button (click)="openLogin()">Login</button> -->
+
+
+
+<!-- <button routerLink="/homepage" class="btn">Home</button> -->
+
+<div class="modal" *ngIf="showLogin">
+    <div class="box">
+        <h3>Login</h3>
+        <label>UserName</label>
+        <input type="text" [(ngModel)]="newComponent.username" /><br>
+        <label>Password</label>
+        <input type="password" [(ngModel)]="newComponent.password" /><br>
+        <button (click)="checkLogin(newComponent.username)">Login</button>
+        <button (click)="closeLogin()">Cancel</button>
+
+
+
+        <!-- <div *ngFor="let newComponent of components;"> -->
+            <div  *ngFor="let component of component1;">
+            <p>{{ newComponent.id }}</p>
+            <p>{{ newComponent.role }}</p>
+            <p>{{ newComponent.username }}</p>
+            <p>{{ newComponent.password }}</p>
+            <p>hi</p>
+            <!-- </div> -->
+    </div>
+</div>
+
+<div class="overlay" *ngIf="showLogin" (click)="closeLogin()"></div>

@@ -1,0 +1,8 @@
+.header-banner{
+    background: linear-gradient(90deg,#004d40,#00bfa5);
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+}

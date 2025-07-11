@@ -1,0 +1,17 @@
+<button onclick="openLogin()">Login</button>
+
+
+<div id="loginModal"
+    style="display: none; position: fixed; top: 30%; background: white; padding: 20px; border: 1px solid #ccc; z-index: 1000;">
+    <h3>Login</h3>
+    <label>UserName</label>
+    <input type="text" id="username" /><br>
+    <label>Password</label>
+    <input type="password" id="password" /><br>
+    <button onclick="checkLogin()">Login</button>
+    <button onclick="closeLogin()">Cancel</button>
+</div>
+
+<div id="overlay" class="overlay" *nglf="showLogin"
+    style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 999;"
+    onclick="closeLogin()"></div>

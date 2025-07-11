@@ -1,0 +1,99 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<div class="main-content">
+    <div class="header-banner">
+        <div class="logo-banner"></div>
+        <div class="buttons">
+            <div *ngFor="let i of component1;">
+                <button routerLink="/upload/{{i.username}}" class="btn" title="Upload Components"><i
+                        class="fas fa-cloud-upload-alt"></i>Upload</button>
+            </div>
+            <button (click)="published()" class="btn"><i class="fas fa-check-circle"></i> Published Components</button>
+            <button (click)="notifications()" class="btn"><i class="fas fa-bell"></i> Notifications</button>
+        </div>
+
+        <div *ngIf="open" class="block">
+            <div *ngFor="let component of components3;" class="notification-card">
+                <i class="fas fa-bell"></i>
+                <div>
+                    <strong><a [attr.href]="'/timeline/' + component.id">{{ component.notification }}</a></strong>
+                </div>
+                <button class="wrong" (click)="removeNotification(component.id)"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+
+    </div>
+    <div class="content">
+<
+        <div class="name" *ngFor="let component of component1;">
+            <h3><i class="fas fa-user"></i> Hello {{component.username}},</h3>
+        </div>
+        <div class="log">
+            <button routerLink="/homepage" class="logout" title="Homepage"><i class="fas fa-sign-out-alt"></i>
+                Logout</button>
+        </div>
+        <h2 style="color: white;" *ngIf="! Ispublished">Your Components</h2>
+        <div class="filters">
+            <input type="text" [(ngModel)]="searchText" placeholder="Search by name..." (change)="search(searchText)">
+            <select id="myselect" [(ngModel)]="selectedCategory" (change)="fetch(selectedCategory)">
+                <option value="" hidden>All Categories</option>
+                <option value="all">All Categories</option>
+                <option value="approved">Approved</option>
+                <option value="rejected">Rejected</option>
+                <option value="returned">Returned</option>
+                <option value="reviewed">Reviewed</option>
+                <option value="Pending For Review">Pending For Review</option>
+            </select>
+        </div>
+        <button *ngIf="Ispublished" (click)="back()" class="btn1">back</button>
+        <table *ngIf="components.length>0" class="styled-table">
+            <thead>
+                <tr>
+                    <th>Component Id</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Current Status</th>
+                    <th>View (git url)</th>
+                    <th *ngIf="! Ispublished">History</th>
+                    <th *ngIf="! Ispublished">Edit</th>
+                    <th *ngIf="! Ispublished">Delete</th>
+                    <th *ngIf="Ispublished">Created by</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let component of components | paginate: { itemsPerPage: 5, currentPage: page }">
+                    <td>{{ component.id}}</td>
+                    <td>{{ component.name}}</td>
+                    <td>{{component.description}}</td>
+                    <td *ngIf="! Ispublished">{{ toSentenceCase(component.status) }}</td>
+                    <td *ngIf="Ispublished">Published</td>
+                    <td>
+                        <a [href]="component.url" target="_blank">
+                            <button class="view-btn"><i class="fas fa-eye"></i></button>
+                        </a>
+                    </td>
+                    <td *ngIf="! Ispublished">
+                        <div class="button-container">
+                            <button routerLink="/timeline/{{component.id}}" class="view-btn"><i
+                                    class="fas fa-flag"></i></button>
+                        </div>
+                    </td>
+                    <td *ngIf="! Ispublished"><button
+                            [disabled]="component.status==='reviewed' || component.status==='approved'"
+                            routerLink="/edit/{{component.created_by}}/{{component.id}}" class="view-btn"><i
+                                class="fas fa-edit"></i></button></td>
+                    <td *ngIf="! Ispublished"><button (click)="delete(component.id)" class="view-btn"
+                            [disabled]="component.status==='reviewed' || component.status==='approved'"><i
+                                class="fa fa-trash"></i></button></td>
+                    <td *ngIf="Ispublished">{{component.created_by}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div *ngIf="components.length != 0" class="paginate"><pagination-controls
+                (pageChange)="page = $event"></pagination-controls></div>
+
+        <h1 *ngIf="components.length === 0">No components available.</h1>
+    </div>
+</div>

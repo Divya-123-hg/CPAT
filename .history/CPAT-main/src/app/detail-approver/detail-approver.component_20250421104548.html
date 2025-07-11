@@ -1,0 +1,16 @@
+
+<div *ngFor="let component of component" class="container">
+    <button class="btn-res" routerLink="/reviewer">Back</button>
+    <h2>Component Details!!</h2>  
+    <p><strong>Id:</strong>{{ component.id }}</p>
+    <p><strong>Name:</strong>{{ component.name }}</p>
+    <p><strong>Description:</strong>{{ component.description }}</p>
+    <p><strong>Status:</strong>{{ component.status }}</p>
+    <ol style="list-style-type: none;">
+        <li><a [href]="component.url" target="_blank">
+            <button class="btn">View on github</button>
+        </a></li>
+    </ol>
+    <button class="btn-res" (click)="update(component.id,'reviewed')">Review</button>
+    <button class="btn-res" (click)="update(component.id,'rejected')">Reject</button>
+</div>

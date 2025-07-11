@@ -1,0 +1,56 @@
+<div class="main-content">
+
+    <div class="header-banner" *ngFor="let component of component1;">
+        <h1>{{component.username}}</h1>
+        <h5>{{component.role}}</h5>
+
+        <button routerLink="/homepage" class="view-btn">Home</button>
+    </div>
+<div class="content">
+    <div class="filters">
+        <input type="text" [(ngModel)]="searchText" placeholder="Search by name..." (change)="search(searchText)">
+        <select id="myselect" [(ngModel)]="selectedCategory" (change)="fetch(selectedCategory)">
+            <option value="" hidden>All Categories</option>
+            <option value="all">All Categories</option>
+            <option value="approved">Approved</option>
+            <option value="rejected">Rejected</option>
+            <option value="pending for approval">Pending for Approval</option>
+        </select>
+    </div>
+
+    <table *ngIf="components.length>0" class="styled-table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Current Status</th>
+                <th>Action</th>
+                <th>Created By</th>
+                <th>Reviewed By</th>
+                <th>Approved By</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let component of components;">
+                <!-- <td>{{i+1}}</td> -->
+                <td>{{ component.id}}</td>
+                <td>{{ component.name}}</td>
+                <td>{{component.description}}</td>
+                <td>{{component.status}}</td>
+                <td>
+                    <!-- <a [href]="component.url" target="_blank" class="view-btn">View</a> -->
+                    <div class="button-container">
+                        <button (click)="onView(component.id)" class="btn">View</button>
+                    </div>
+                </td>
+                <td>{{ component.created_by }}</td>
+                <td>{{ component.reviewed_by }}</td>
+                <td>{{ component.approved_by }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p *ngIf="components.length === 0">No components available.</p>
+</div>
+</div>

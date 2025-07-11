@@ -1,0 +1,19 @@
+
+<p>Test</p>
+<button (click)="openLogin()">Login</button>
+<p>{{ newComponent.id }}</p>
+<!-- <p>{{ newComponent.role }}</p> -->
+
+<button routerLink="/homepage" class="btn">Home</button>
+
+<div class="modal" *ngIf="showLogin">
+    <h3>Login</h3>
+    <label>UserName</label>
+    <input type="text" [(ngModel)]="UserName" /><br>
+    <label>Password</label>
+    <input type="password" [(ngModel)]="Password" /><br>
+    <button (click)="checkLogin()">Login</button>
+    <button (click)="closeLogin()">Cancel</button>
+</div>
+
+<div class="overlay" *ngIf="showLogin" (click)="closeLogin()"></div>

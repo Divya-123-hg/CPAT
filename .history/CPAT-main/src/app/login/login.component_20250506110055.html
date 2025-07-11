@@ -1,0 +1,14 @@
+<button (click)="openLogin()">Login</button>
+
+<div class="overlay" *nglf="showLogin" (click)="closeLogin()"></div>
+
+
+<div class="modal" *nglf="showLogin">
+    <h3>Login</h3>
+    <label>UserName</label>
+    <input type="text" [(ngModel)]="UserName" /><br>
+    <label>Password</label>
+    <input type="password" [(ngModel)]="Password" /><br>
+    <button (click)="checkLogin()">Login</button>
+    <button (click)="closeLogin()">Cancel</button>
+</div>

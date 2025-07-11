@@ -1,0 +1,228 @@
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+    box-shadow: 0 0 10px black;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.styled-table thead {
+    background-color: #048888;
+    color: #ffffff;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #dddddd;
+}
+
+.name {
+    padding-right: 10px;
+    color: white;
+}
+
+.styled-table tbody {
+    background-color: rgb(78, 76, 76);
+    color: white;
+    height: 0cm;
+}
+
+.styled-table tbody tr:hover {
+    background-color: gray;
+}
+
+.view-btn {
+    border-radius: 4px;
+}
+
+.btn {
+    position: sticky;
+    right: 25px;
+    margin: 2px 0;
+    color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    display: block;
+    text-align: left;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn1 {
+    position: sticky;
+    right: 25px;
+    margin: 2px 0;
+    color: #fff;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.2);
+    display: block;
+    text-align: left;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn i {
+    min-width: 20px;
+    /* display: inline-block; */
+    text-align: center;
+}
+
+.view-btn:hover {
+    background-color: #00796b;
+}
+
+.btn:hover {
+    background-color: grey;
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 20px 0;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-group label {
+    font-size: 18px;
+}
+
+.filters input[type="text"],
+.filters select {
+    padding: 10px 14px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    min-width: 240px;
+    background-color: #f9f9f9;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.filters input[type="text"]:focus,
+.filters select:focus {
+    border-color: #3f51b5;
+    box-shadow: 0 0 5px rgba(63, 81, 181, 0.2);
+}
+
+.filter-btn {
+    background-color: #3f51b5;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.filter-btn:hover {
+    background-color: #2c3e9f;
+}
+
+.logo-banner {
+    width: 200px;
+    height: 200px;
+    margin-left: 20px;
+    background-image: url('../../assests/logo4.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.header-banner {
+    background: linear-gradient(90deg, #242928, #00adb5);
+    text-align: center;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 244px;
+}
+
+.content {
+    margin-left: 249px;
+}
+
+.block {
+    width: 10cm;
+    width: 100%;
+}
+
+.notification-card {
+    display: flex;
+    top: 100%;
+    z-index: 1000;
+    align-items: center;
+    background-color: #f9f9ff;
+    background-color: rgb(199, 187, 187);
+    border-left: 7px solid teal;
+    padding-left: 0.2cm;
+    margin: 10px 0 10px 0;
+    border-radius: 6px;
+    font-size: x-small;
+}
+
+a:-webkit-any-link {
+    color: black;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.notification-card:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    color: whitesmoke;
+}
+
+.notification-card i {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+.time {
+    background-color: rgb(6, 143, 143);
+    border-radius: 4px;
+    height: 0.7cm;
+    color: #f0f2f4;
+    margin-right: 1cm;
+}
+
+.wrong {
+    border-radius: 16px;
+    border: none;
+    margin-left: auto;
+}
+
+.paginate{
+    /* border:1px solid black; */
+    
+}

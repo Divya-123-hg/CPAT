@@ -1,0 +1,40 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- It links to a CSS stylesheet hosted on CDNJS (a content delivery network) -->
+</head>
+
+
+<div class="adminPage" *ngIf="AdminPage">
+    <div class="header-banner">
+        <div class="Homebtn">
+            <div class="logo-banner"></div>
+            <button routerLink="/homepage" class="btn"><i class="fas fa-home"></i>Home</button>
+            <button class="btn" (click)="addUser()"><i class="fas fa-user-plus"></i> Add User</button>
+        </div>
+    </div>
+    <div class="content">
+        
+        <div>
+            <h1 class="name">ADMIN</h1>
+            <div *ngIf="component1.length === 0">no users added</div>
+            <table class="styled-table" *ngIf="component1.length>0">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Remove user</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let component of component1;">
+                        <td>{{component.id}}</td>
+                        <td>{{component.username}}</td>
+                        <td>{{component.role}}</td>
+                        <td><button class="view-btn"><i class="fa fa-trash"></i></button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

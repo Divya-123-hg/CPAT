@@ -1,0 +1,33 @@
+<div class="container">
+    <div *ngFor="let component of component">
+        <button class="btn-res" routerLink="/reviewer/{{component.reviewed_by}}">Back</button>
+        <h2>Component Details!!</h2>
+        <h1>{{ component.reviewed_by }}</h1>
+        <p><strong>Id:</strong>{{ component.id }}</p>
+        <p><strong>Name:</strong>{{ component.name }}</p>
+        <p><strong>Description:</strong>{{ component.description }}</p>
+        <p><strong>Status:</strong>{{ component.reviewer_status }}</p>
+        <ol style="list-style-type: none;">
+            <li>
+                <a [href]="component.url" target="_blank">
+                    <button class="btn">View on github</button>
+                </a>
+            </li>
+        </ol>
+        <button class="btn-res" (click)="update(component.id,'reviewed')"  [disabled]="component.status==='reviewed' || component.status==='approved'|| component.status==='reje'" >Review</button>
+
+        <button class="btn-res" (click)="openPopup()" [disabled]="component.status==='reviewed' || component.status==='approved'">Return</button>
+
+        <div class="overlay" *ngIf="isOpen">
+            <div class="popup">
+                <h2>Leave a comment</h2>
+                <textarea [(ngModel)]="comment" placeholder="Write your comment here..."></textarea>
+                <div class="buttons">
+                    <button
+                        (click)="submitComment(comment,component.id); update(component.id,'returned')">Submit</button>
+                    <button class="cancel" (click)="closePopup()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

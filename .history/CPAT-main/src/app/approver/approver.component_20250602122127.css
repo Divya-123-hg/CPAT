@@ -1,0 +1,150 @@
+.styled-table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+    box-shadow: 0 0 10px black;
+    background-color: aliceblue;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.styled-table thead{
+    background-color: #00796b;
+    color: #ffffff;
+}
+
+.styled-table th,
+.styled-table td{
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:hover{
+    background-color: #f1f1f1;
+}
+
+.view-btn{
+    color: white;
+    background-color: #26a69a;
+    padding: 6px 12px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.view-btn:hover{
+    background-color: #00796b;
+}
+
+.btn{
+    background-color: #00796b;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease,transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.btn:hover{
+    transform: translate(-2px);
+    background-color: #004d40;
+}
+
+.btn:active{
+    transform: translateY(0);
+}
+
+.filters{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.filter-group{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-group label{
+    font-size: 18px;
+}
+
+.filters input[type="text"],
+.filters select{
+    padding: 10px 14px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    min-width: 240px;
+    background-color: #f9f9f9;
+    transition: border 0.3s , box-shadow 0.3s;
+}
+
+.filters input[type="text"]:focus,
+.filters select:focus{
+    border-color: #3f51b5;
+    box-shadow: 0 0 5px rgba(63,81,181,0.2);
+}
+
+.filter-btn{
+    background-color: #3f51b5;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.filter-btn:hover{
+    background-color: #2c3e9f;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn{
+    background-color: #00796b;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover{
+    background-color: #004d40;
+}
+
+.header-banner{
+    /* background: linear-gradient(90deg,#004d40,#141a19); */
+    background-image: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='1368' height='400' fill='none'%3e%3cmask id='a' width='1368' height='401' x='0' y='0' maskUnits='userSpaceOnUse'%3e%3cpath fill='url(%23paint0_linear)' d='M437 116C223 116 112 0 112 0h1256v400c-82 0-225-21-282-109-112-175-436-175-649-175z'/%3e%3cpath fill='url(%23paint1_linear)' d='M1368 400V282C891-29 788 40 711 161 608 324 121 372 0 361v39h1368z'/%3e%3cpath fill='url(%23paint2_linear)' d='M1368 244v156H0V94c92-24 198-46 375 0l135 41c176 51 195 109 858 109z'/%3e%3cpath fill='url(%23paint3_linear)' d='M1252 400h116c-14-7-35-14-116-16-663-14-837-128-1013-258l-85-61C98 28 46 8 0 0v400h1252z'/%3e%3c/mask%3e%3cg mask='url(%23a)'%3e%3cpath fill='white' d='M-172-98h1671v601H-172z'/%3e%3c/g%3e%3cdefs%3e%3clinearGradient id='paint0_linear' x1='602' x2='1093.5' y1='-960.5' y2='272' gradientUnits='userSpaceOnUse'%3e%3cstop stop-color='white'/%3e%3cstop offset='1' stop-color='white' stop-opacity='0'/%3e%3c/linearGradient%3e%3clinearGradient id='paint1_linear' x1='482' x2='480' y1='1058.5' y2='70.5' gradientUnits='userSpaceOnUse'%3e%3cstop stop-color='white'/%3e%3cstop offset='1' stop-color='white' stop-opacity='0'/%3e%3c/linearGradient%3e%3clinearGradient id='paint2_linear' x1='424' x2='446.1' y1='-587.5' y2='274.6' gradientUnits='userSpaceOnUse'%3e%3cstop stop-color='white'/%3e%3cstop offset='1' stop-color='white' stop-opacity='0'/%3e%3c/linearGradient%3e%3clinearGradient id='paint3_linear' x1='587' x2='349' y1='-1120.5' y2='341' gradientUnits='userSpaceOnUse'%3e%3cstop stop-color='white'/%3e%3cstop offset='1' stop-color='white' stop-opacity='0'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e), linear-gradient(90deg, #005B4B, #005B4B);
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+}

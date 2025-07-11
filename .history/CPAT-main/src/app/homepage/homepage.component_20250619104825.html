@@ -1,0 +1,38 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<div class="homepage-container">
+    <div class="box">
+        <div class="header">
+            <i class="fas fa-truck-moving logo-icon" style="color: black;"></i>
+            <h1>DTICI</h1>
+            <h3>For all who keep the world moving</h3>
+        </div>
+
+        <div class="button-container">
+            <button class="role-btn" (click)="openLogin()"> <i class="fas fa-user-edit"></i> Login </button>
+            <button class="role-btn" (click)="popUp()"> <i class="fas fa-user-check"></i> admin</button>
+        </div>
+
+        <div class="box1" *ngIf="showAdmin">
+            <h3 style="text-align:left;">Admin Login</h3>
+            <label>UserName</label>
+            <input [(ngModel)]="Admin_username" type="text" /><br>
+            <label>Password</label>
+            <input [(ngModel)]="Admin_password" type="password" /><br>
+            <button (click)="GoToAdmin()">Login</button>
+            <button (click)="popUpClose()">Cancel</button>
+        </div>
+
+        <div *ngIf="showLogin" class="box1">
+            <h3 style="text-align:left;">Login</h3>
+            <label> UserName</label>
+            <input type="text" [(ngModel)]="username" /><br>
+            <label>Password</label>
+            <input type="password" [(ngModel)]="password" /><br>
+            <button (click)="checkLogin(username)">Login</button>
+            <button (click)="closeLogin()">Cancel</button>
+        </div>
+    </div>
+</div>

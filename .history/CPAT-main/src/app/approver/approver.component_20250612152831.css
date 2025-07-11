@@ -1,0 +1,25 @@
+  open: boolean = false;
+
+  displayNotifications() {
+    this.componentService.getNotifications(this.name, this.table).subscribe((data: ComponentItem[]) => {
+      this.components3 = data;
+      console.log(this.components3);
+    });
+  }
+
+  notifications() {
+    this.open = !this.open;
+    this.displayNotifications();
+    this.loadComponents('components');
+  }
+
+  closeNotification() {
+    this.open = false;
+  }
+
+  removeNotification(id: number) {
+    console.log('remove notification', id);
+    this.componentService.deleteNotification(id, this.table).subscribe(() => {
+    });
+    this.displayNotifications();
+  }

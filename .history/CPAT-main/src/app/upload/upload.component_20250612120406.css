@@ -1,0 +1,56 @@
+/* mat-card{
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    border-left: 8px solid teal;
+} */
+
+h2{
+    color: #00695c;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+button{
+    margin-right: 10px;
+}
+mat-card{
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: rgb(80, 194, 194);
+    box-shadow: 0 4px 12px black;
+    border-radius: 12px;
+    color: black;
+    border-color: rgb(0, 0, 0);
+}
+
+mat-card h2{
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: black;
+}
+
+.full-width{
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+}
+
+button[type="submit"]{
+    margin-right: 10px;
+    box-shadow: 0 4px 12px black;
+    margin: 10px;
+}
+
+button[type="button"]{
+    margin-right: 10px;
+    box-shadow: 0 4px 12px black;
+    margin: 10px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
