@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+ 
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align items to the start */
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+    height: 60px; /* Adjust height as needed */
+    width: 100%; /* Ensure full width */
+}
+ 
+.truck-icon {
+    font-size: 45px;
+    position: absolute;
+    animation: moveTruck 23s linear infinite; /* Adjust duration for slower animation */
+    z-index: 1; /* Ensure truck moves behind the text */
+}
+ 
+h1 {
+    font-weight: bold;
+    font-style: italic;
+    color: black;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add shadow effect */
+    white-space: nowrap; /* Prevent text from wrapping */
+    position: relative;
+    animation: moveText 20s linear infinite; /* Adjust duration for slower animation */
+    z-index: 12; /* Ensure text moves in front of the truck */
+    left: 20px; /* Add more spacing to prevent overlap */
+}
+ 
+h2 {
+    font-weight: bold;
+    color: black;
+    margin-top: 20px; /* Adjust margin to position the text */
+}
+ 
+@keyframes moveTruck {
+    0% { left: -150px; } /* Start off-screen to the left */
+    100% { left: calc(100% + 150px); } /* Move off-screen to the right */
+}
+ 
+@keyframes moveText {
+    0% { left: 0; } /* Start at the beginning */
+    100% { left: calc(100% + 100px); } /* Move off-screen to the right */
+}
+ 
+.button-container {
+    margin-top: 20px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+ 
+button {
+    padding: 10px 20px;
+    margin: 10px 0;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+ 
+button:hover {
+    background-color: darkcyan;
+}
